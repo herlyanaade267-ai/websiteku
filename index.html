@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio [Nama Anda] - The Blue Fun Zone</title>
+    <!-- Memuat Tailwind CSS untunak styling cepat dan responsif -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Memuat ikon Lucide React (digunakan via CSS) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Memuat Google Fonts: Permanent Marker (untuk judul lucu) dan Poppins (untuk teks badan) -->
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Palet Warna (Disesuaikan dari panduan) */
+        :root {
+            --color-primary: #89CFF0; /* Biru Langit Ceria */
+            --color-secondary: #003366; /* Biru Dongker Tua */
+            --color-accent: #FFEE93; /* Kuning Pisang Lucu */
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--color-primary); /* Latar Belakang Biru Langit Ceria */
+            color: var(--color-secondary);
+        }
+
+        /* Styling Font Khusus untuk Judul */
+        .judul-lucu {
+            font-family: 'Permanent Marker', cursive;
+            color: var(--color-secondary);
+        }
+
+        /* Efek Shadow Lucu (Seperti Komik/Doodle) */
+        .card-shadow {
+            box-shadow: 8px 8px 0px 0px var(--color-secondary); /* Bayangan tebal Biru Dongker */
+            border: 2px solid var(--color-secondary);
+            transition: all 0.2s ease-in-out;
+        }
+        .card-shadow:hover {
+            transform: translate(-4px, -4px); /* Efek 'angkat' saat di-hover */
+            box-shadow: 12px 12px 0px 0px var(--color-secondary);
+        }
+
+        /* Efek Tombol Bouncing Ringan */
+        .btn-accent:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 4px 0px 0px #002244;
+        }
+
+        /* Styling untuk Ikon yang sedikit diputar */
+        .icon-rotate {
+            transform: rotate(-5deg);
+        }
+
+        /* Utilitas untuk Font Lucide */
+        .lucide {
+            display: inline-block;
+            width: 1.5em;
+            height: 1.5em;
+            stroke-width: 2;
+            stroke: currentColor;
+            fill: none;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body class="min-h-screen antialiased flex flex-col">
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-10 bg-white/90 backdrop-blur-sm card-shadow shadow-lg m-4 rounded-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+            <a href="#" class="judul-lucu text-2xl tracking-wider hover:text-red-500 transition duration-300">
+                euis ade <span class="text-lg">✨</span>
+            </a>
+            <nav class="hidden sm:flex space-x-6 text-sm font-semibold">
+                <a href="#tentang" class="text-lg hover:text-[var(--color-accent)] hover:bg-[var(--color-secondary)] px-3 py-1 rounded-md transition duration-200">Tentang</a>
+                <a href="#proyek" class="text-lg hover:text-[var(--color-accent)] hover:bg-[var(--color-secondary)] px-3 py-1 rounded-md transition duration-200">Proyek</a>
+                <a href="#kontak" class="text-lg hover:text-[var(--color-accent)] hover:bg-[var(--color-secondary)] px-3 py-1 rounded-md transition duration-200">Kontak</a>
+            </nav>
+            <button class="sm:hidden text-xl">
+                <!-- Ikon Menu Burger (Lucide: Menu) -->
+                <i data-lucide="menu" class="lucide"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-7xl mx-auto p-4 sm:p-8 w-full">
+
+        <!-- 1. Hero Section: Biru Ceria, Judul Lucu -->
+        <section id="hero" class="bg-white p-8 sm:p-12 rounded-2xl mb-12 text-center card-shadow">
+            <div class="flex flex-col items-center">
+                <!-- Gambar/Foto Placeholder -->
+                <div class="w-24 h-24 sm:w-32 sm:h-32 bg-[var(--color-accent)] rounded-full mb-4 border-4 border-[var(--color-secondary)] flex items-center justify-center text-4xl text-[var(--color-secondary)] icon-rotate">
+                    <!-- Ikon Emoji Wajah Lucu -->
+                    <i data-lucide="brain" class="lucide w-12 h-12"></i> 
+                </div>
+
+                <!-- Judul Utama -->
+                <h1 class="judul-lucu text-5xl sm:text-7xl font-bold mb-4 leading-tight">
+                    Halo! Saya [Nama Anda], <span class="text-[var(--color-accent)] text-6xl">✨</span><br> Sang <span class="underline decoration-[var(--color-accent)] decoration-8">Pencipta Digital</span> Ceria!
+                </h1>
+                <p class="text-xl sm:text-2xl text-gray-600 mb-8">
+                    *Selamat datang di tempat ngopi (kopi code) digital saya.*
+                </p>
+
+                <!-- CTA Lucu -->
+                <a href="#proyek" class="btn-accent bg-[var(--color-secondary)] text-white text-xl sm:text-2xl font-bold py-3 px-8 rounded-full transition duration-300 transform shadow-xl shadow-[var(--color-accent)] hover:shadow-2xl">
+                    Lihat Proyek-Proyek Serius (tapi Lucu) Saya!
+                </a>
+            </div>
+        </section>
+
+        <!-- 2. Tentang Saya Section: Aesthetic & Personal -->
+        <section id="tentang" class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+            <div class="lg:col-span-2 bg-white p-6 rounded-2xl card-shadow">
+                <h2 class="judul-lucu text-4xl mb-4 border-b-4 border-[var(--color-accent)] inline-block pb-1">
+                    [👾] Tentang Saya
+                </h2>
+                <p class="text-lg mb-4">
+                    Saya seorang pelajar yang semangat di bidang [Sebutkan Jurusan/Minat Anda]. Bagi saya, *coding* itu seperti bermain LEGO, hanya saja hasil akhirnya bisa berupa aplikasi yang aneh, lucu, dan (semoga) berguna!
+                </p>
+                <p class="text-lg">
+                    Filosofi ngoding saya: **"Kalau tidak membuat tertawa, berarti ada yang kurang."** Saat ini saya sedang fokus mendalami:
+                </p>
+                <!-- List Keterampilan dengan Emoji -->
+                <ul class="space-y-2 mt-4 text-lg">
+                    <li class="flex items-center">
+                        <span class="mr-3 text-2xl">💻</span> HTML, CSS, JavaScript (Saya menyebutnya 'Trio Sakti')
+                    </li>
+                    <li class="flex items-center">
+                        <span class="mr-3 text-2xl">☕</span> Sedikit *Backend* ([Sebutkan bahasa/framework: Node.js/Python/lainnya])
+                    </li>
+                    <li class="flex items-center">
+                        <span class="mr-3 text-2xl">📚</span> Belajar hal baru dan minum kopi (paling penting!)
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="lg:col-span-1 bg-white p-6 rounded-2xl card-shadow border-2 border-[var(--color-accent)]">
+                <h3 class="judul-lucu text-3xl mb-4 text-center">Mood Hari Ini</h3>
+                <div class="text-center">
+                    <div class="text-6xl mb-2 icon-rotate">🤪</div>
+                    <p class="text-xl font-semibold">Sedikit Ngantuk, Banyak Ide.</p>
+                </div>
+                <p class="mt-4 text-sm text-center text-gray-500">
+                    *Status ini otomatis terbaharui setiap saya selesai minum segelas air.*
+                </p>
+            </div>
+        </section>
+
+        <!-- 3. Proyek Section: Kartu Proyek -->
+        <section id="proyek" class="mb-12">
+            <h2 class="judul-lucu text-4xl mb-8 text-center">
+                [🚀] Proyek-Proyek Terbaik (dan Terlucu)
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Kartu Proyek 1 -->
+                <div class="bg-white p-6 rounded-xl card-shadow">
+                    <div class="h-32 bg-gray-200 rounded-lg mb-4 flex items-center justify-center text-5xl">
+                        <!-- Ikon Proyek (Lucide: Code) -->
+                        <i data-lucide="code" class="lucide w-16 h-16 text-[var(--color-secondary)]"></i>
+                    </div>
+                    <h3 class="judul-lucu text-3xl mb-2">Aplikasi Kalkulator Kucing</h3>
+                    <p class="text-sm text-gray-500 mb-3">*Solusi yang akan mengubah hidup Anda (atau setidaknya hari Anda).*</p>
+                    <p class="mb-4">
+                        Aplikasi yang menghitung berapa banyak waktu yang dihabiskan kucing Anda untuk tidur, dibandingkan waktu yang Anda habiskan untuk ngoding. (Jawabannya: Banyak).
+                    </p>
+                    <a href="#" class="inline-block text-white bg-[var(--color-secondary)] text-sm font-semibold py-2 px-4 rounded-full transition duration-200 hover:bg-[var(--color-accent)] hover:text-[var(--color-secondary)] hover:shadow-md">
+                        Lihat di GitHub
+                    </a>
+                </div>
+
+                <!-- Kartu Proyek 2 -->
+                <div class="bg-white p-6 rounded-xl card-shadow">
+                    <div class="h-32 bg-gray-200 rounded-lg mb-4 flex items-center justify-center text-5xl">
+                        <!-- Ikon Proyek (Lucide: Lightbulb) -->
+                        <i data-lucide="lightbulb" class="lucide w-16 h-16 text-[var(--color-secondary)]"></i>
+                    </div>
+                    <h3 class="judul-lucu text-3xl mb-2">Sistem Alarm Prank</h3>
+                    <p class="text-sm text-gray-500 mb-3">*Dibuat dalam kondisi deadline yang 'mencekam', tapi hasilnya fantastis!*</p>
+                    <p class="mb-4">
+                        Sistem sederhana berbasis web yang memutar suara "Ayam Berkokok" secara acak 5 kali di pagi hari untuk memastikan bangun lebih semangat.
+                    </p>
+                    <a href="#" class="inline-block text-white bg-[var(--color-secondary)] text-sm font-semibold py-2 px-4 rounded-full transition duration-200 hover:bg-[var(--color-accent)] hover:text-[var(--color-secondary)] hover:shadow-md">
+                        Coba Demo
+                    </a>
+                </div>
+
+                <!-- Kartu Proyek 3 -->
+                <div class="bg-white p-6 rounded-xl card-shadow">
+                    <div class="h-32 bg-gray-200 rounded-lg mb-4 flex items-center justify-center text-5xl">
+                        <!-- Ikon Proyek (Lucide: Gamepad) -->
+                        <i data-lucide="gamepad" class="lucide w-16 h-16 text-[var(--color-secondary)]"></i>
+                    </div>
+                    <h3 class="judul-lucu text-3xl mb-2">Game "Jari Kaki Tersembunyi"</h3>
+                    <p class="text-sm text-gray-500 mb-3">*Proyek paling tidak berguna, namun paling saya cintai.*</p>
+                    <p class="mb-4">
+                        Game berbasis JavaScript sederhana yang bertujuan mencari satu jari kaki tersembunyi di antara 1000 ikon emoji sepatu. Sangat menguji kesabaran.
+                    </p>
+                    <a href="#" class="inline-block text-white bg-[var(--color-secondary)] text-sm font-semibold py-2 px-4 rounded-full transition duration-200 hover:bg-[var(--color-accent)] hover:text-[var(--color-secondary)] hover:shadow-md">
+                        Mainkan Sekarang
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Kontak Section -->
+        <section id="kontak" class="bg-white p-8 rounded-2xl text-center card-shadow">
+            <h2 class="judul-lucu text-4xl mb-4">
+                [✉️] Hubungi Saya (Kalau Berani)
+            </h2>
+            <p class="text-xl mb-6">
+                Saya selalu terbuka untuk proyek baru, ide gila, atau sekadar obrolan tentang kucing dan kopi.
+            </p>
+            <a href="mailto:emailanda@contoh.com" class="btn-accent bg-[var(--color-accent)] text-[var(--color-secondary)] text-xl font-bold py-3 px-8 rounded-full transition duration-300 transform border-4 border-[var(--color-secondary)] hover:shadow-2xl">
+                Kirim Email Lucu
+            </a>
+            <div class="flex justify-center space-x-6 mt-6">
+                <!-- Ikon Sosial Media (Placeholder) -->
+                <a href="#" class="text-4xl text-[var(--color-secondary)] hover:text-blue-600 transition duration-200">
+                    <i data-lucide="github" class="lucide w-8 h-8"></i>
+                </a>
+                <a href="#" class="text-4xl text-[var(--color-secondary)] hover:text-blue-400 transition duration-200">
+                    <i data-lucide="twitter" class="lucide w-8 h-8"></i>
+                </a>
+                <a href="#" class="text-4xl text-[var(--color-secondary)] hover:text-pink-600 transition duration-200">
+                    <i data-lucide="instagram" class="lucide w-8 h-8"></i>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer: Lucu dan Sederhana -->
+    <footer class="mt-12 p-6 text-center text-sm text-[var(--color-secondary)] bg-white/70 backdrop-blur-sm">
+        <p>
+            Website ini dibuat dengan 99% air dan 1% kafein. Didesain dengan penuh kegembiraan dan Biru Ceria 🤪.
+        </p>
+        <p class="mt-2 text-xs">
+            &copy; 2024 [Nama Anda]. Sekarang kembali *coding*!
+        </p>
+    </footer>
+
+    <!-- Script untuk menginisialisasi Ikon Lucide -->
+    <script>
+        // Mengubah semua elemen dengan atribut data-lucide menjadi ikon SVG
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
